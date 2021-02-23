@@ -23,7 +23,7 @@ def get_friends_locations(screen_name, bearer_token):
         }
     search_params = {
         'screen_name': '@'+screen_name,
-        'count': 100
+        'count': 30
     }
 
     search_url = '{}1.1/friends/list.json'.format(base_url)

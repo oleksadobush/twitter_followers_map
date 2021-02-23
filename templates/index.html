@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1 class="greeting">Do you want to know where your twitter friends on map?</h1>
+<h2>Find out now!</h2>
+<form action="/map_app" method="post">
+    <label>USERNAME</label>
+        <input name="Screen_Name" placeholder="enter username" type="text">
+    <label>TOKEN</label>
+        <input name="Bearer_Token" placeholder="enter token" type="text">
+    <button>Find followers</button>
+</form>
+{% endblock %}

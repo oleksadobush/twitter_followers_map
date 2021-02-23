@@ -5,7 +5,6 @@ import folium
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderUnavailable
 from geopy.extra.rate_limiter import RateLimiter
-access_token = "AAAAAAAAAAAAAAAAAAAAACl6MwEAAAAAbBTTF5RTQiaUrsj5M76yX0vpvW4%3DgWQVEVdOHRkuZr4gbek3Q1EOxHV9NFabwIB0gOBWBe3EV5CZlI"
 
 
 def get_friends_locations(screen_name, bearer_token):
@@ -75,7 +74,7 @@ def create_map(locations):
         folium.Marker(location=location, popup=user_name).add_to(followers_map)
     raw_map.add_child(followers_map)
     raw_map.add_child(folium.LayerControl())
-    raw_map.save("templates/followers_map.html")
+    return raw_map._repr_html_()
 
 
 create_map(followers_coordinates(get_friends_locations('kvestrelanda', access_token)))

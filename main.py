@@ -16,8 +16,9 @@ def map_app():
     user_token = request.form.get("Bearer_Token")
     if not user_token or not user_name:
         return render_template("failure.html")
-
-    return render_template("followers_map.html")
+    locations = followers_coordinates(get_friends_locations(user_name, user_token))
+    followers_map = create_map(locations)
+    return followers_map
 
 
 @app.route('/errors_found')
@@ -26,4 +27,4 @@ def errors_found():
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)

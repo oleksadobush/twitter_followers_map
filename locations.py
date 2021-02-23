@@ -75,7 +75,7 @@ def create_map(locations):
         folium.Marker(location=location, popup=user_name).add_to(followers_map)
     raw_map.add_child(followers_map)
     raw_map.add_child(folium.LayerControl())
-    raw_map.save("followers_map.html")
+    raw_map.save("templates/followers_map.html")
 
 
 create_map(followers_coordinates(get_friends_locations('kvestrelanda', access_token)))

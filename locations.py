@@ -75,6 +75,3 @@ def create_map(locations):
     raw_map.add_child(followers_map)
     raw_map.add_child(folium.LayerControl())
     return raw_map._repr_html_()
-
-
-create_map(followers_coordinates(get_friends_locations('kvestrelanda', access_token)))
